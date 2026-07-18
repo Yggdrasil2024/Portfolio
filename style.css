@@ -90,7 +90,8 @@ section {
   border: none;
 }
 
-[class*="btn"]:hover {
+[class*="btn"]:hover,
+[class*="btn"]:focus {
   background-color: var(--clr-primary-hover);
   transform: translateY(-4px);
 }
@@ -105,6 +106,7 @@ section {
   border-bottom: 1px solid var(--clr-border);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .nav {
@@ -112,6 +114,7 @@ section {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 10;
 }
 
 .nav-toggle-label {
@@ -213,16 +216,112 @@ section {
   hero section: generale 
 * -mobile first
 ==============================*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-img {
+  aspect-ratio: 1/1;
+  width: 250px;
+  clip-path: circle();
+  border-radius: 50%;
+  z-index: inherit;
+  border: 1px solid var(--clr-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-img:hover,
+.hero-img:focus {
+  border: 3px solid var(--clr-primary-hover);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  margin-top: 1rem;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  text-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  font-size: 1.5rem;
+  padding: 8px;
+  font-weight: 500;
+  color: var(--clr-primary);
+  font-style: italic;
+}
+
+.hero-btn {
+  transition: all 0.3;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+  background-color: var(--clr-primary-hover);
+}
 
 /*==============================
 hero section: tablet
 ==============================*/
 @media screen and (min-width: 768px) {
+  .hero-container {
+    width: 560px;
+  }
 }
 
 /*==============================
 hero section: desktop
 ==============================*/
 @media screen and (min-width: 1204px) {
-  
+  .hero-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+  }
+
+  .hero-img {
+    width:330px;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 600px;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
