@@ -71,8 +71,16 @@ section {
 [class*="-card"],
 .timeline-item {
   background-color: var(--clr-surface);
+  border: 1px solid transparent;
   border-radius: 16px;
   padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+[class*="-card"]:hover,
+[class*="-card"]:focus {
+  border-color: var(--clr-border);
+  transform: translateY(-4px);
 }
 
 [class*="-btn"] {
@@ -368,4 +376,87 @@ hero section: desktop
   }
 }
 
+/*==============================
+skill section: general
+==============================*/
+.skills {
+}
 
+.skills-container {
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.skill-card:hover,
+.skill-card:focus {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.skill-bar {
+  height: 1rem;
+  margin: 4px 0;
+  order: 3;
+  background-color: var(--clr-border);
+  border-radius: 999px;
+}
+
+.skill-fill {
+  height: 100%;
+  whidth: 100%;
+  background-color: var(--clr-primary);
+  border-radius: 999px;
+}
+
+.skill-bar .html {
+  width: 80%;
+}
+
+.skill-bar .css {
+  width: 30%;
+}
+
+.skill-bar .git {
+  width: 75%;
+}
+
+.skill-bar .responsive {
+  width: 20%;
+}
+
+.skill-progress {
+  order: 2;
+  align-self: flex-end;
+}
+
+/*==============================
+skills section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+  .skill-card {
+    grid-column: span 2;
+  }
+}
+
+/*==============================
+skills section: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .skill-card {
+    grid-column: span 1;
+  }
+
+  .skills .section-title {
+    text-align: left;
+  }
+}
