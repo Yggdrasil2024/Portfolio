@@ -1,0 +1,36 @@
+/*======= general styles =======*/
+
+:root {
+  --main-color: #0b132b;
+  --secondary-color: #ff5a36;
+  --accent-color: #f4f6f9;
+  ---text-dark: #1d1d1f;
+  --text-light: #ffffff;
+  --font-titles: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--text-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*======= header section =======*/
+
+/*======= hero section =======*/
+
+/*=======  section  =======*/
+/**/ /**/ /**/
