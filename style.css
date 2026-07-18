@@ -114,8 +114,14 @@ section {
   position: relative;
 }
 
-.nav .nav-toggle-label {
+.nav-toggle-label {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.2rem;
+  transition: all 0.3s;
 }
 
 .nav .nav-toggle-label svg {
@@ -171,6 +177,14 @@ section {
   top: 100%;
 }
 
+.nav-toggle-label:hover {
+  background: var(--clr-surface);
+}
+
+/*==============================
+  header responsive depuis la
+  tablette et au dela
+==============================*/
 @media screen and (min-width: 768px) {
   .nav-toggle-label {
     display: none;
@@ -193,4 +207,22 @@ section {
   .menu-link {
     padding: 0;
   }
+}
+
+/*==============================
+  hero section: generale 
+* -mobile first
+==============================*/
+
+/*==============================
+hero section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+}
+
+/*==============================
+hero section: desktop
+==============================*/
+@media screen and (min-width: 1204px) {
+  
 }
