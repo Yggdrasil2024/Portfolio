@@ -304,7 +304,7 @@ hero section: desktop
   }
 
   .hero-img {
-    width:330px;
+    width: 330px;
   }
 
   .hero-text {
@@ -325,3 +325,47 @@ hero section: desktop
     align-items: flex-start;
   }
 }
+
+/*==============================
+about: section
+==============================*/
+.about {
+  background-color: var(--clr-surface-light);
+}
+
+.about .section-title {
+  text-align: center;
+}
+
+.about p {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/*==============================
+hero section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+  .about p {
+    text-align: justify;
+    width: 500px;
+    margin-inline: auto;
+  }
+}
+/*==============================
+hero section: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .about .section-title {
+    text-align: left;
+    margin: 1rem;
+  }
+
+  .about p {
+    display: inline-flex;
+    margin-right: 24px;
+    text-indent: 16px;
+  }
+}
+
+
