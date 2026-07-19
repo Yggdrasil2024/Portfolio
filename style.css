@@ -75,13 +75,16 @@ section {
   border: 1px solid transparent;
   border-radius: 16px;
   padding: 1.25rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
   transition: all 0.3s ease;
 }
 
 [class*="-card"]:hover,
-[class*="-card"]:focus {
+[class*="-card"]:focus,
+.timeline-item:hover {
   border-color: var(--clr-border);
   transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 [class*="-btn"] {
@@ -474,6 +477,9 @@ skills section: desktop
 /*==============================
 project section: general
 ==============================*/
+.projects {
+  background-color: var(--clr-surface-light);
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -594,7 +600,7 @@ hero section: tablet
   }
 }
 /*==============================
-hero section: desktop
+projects section: desktop
 ==============================*/
 @media screen and (min-width: 1024px) {
   .section-title {
@@ -609,5 +615,51 @@ hero section: desktop
   .project-buttons {
     width: auto;
     display: block;
+  }
+}
+
+/*==============================
+timeline section: general
+==============================*/
+.experience .timeline {
+  border-left: 3px dashed var(--clr-primary);
+  padding-left: 1rem;
+}
+
+.experience .timeline-item {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.experience .timeline-item:before {
+  content: " ";
+  position: absolute;
+  left: -29px;
+  top: 45%;
+  background-color: var(--clr-primary-hover);
+  display: block;
+  height: 16px;
+  width: 16px;
+  border: 4px solid var(--clr-primary);
+  outline: 2px solid var(--clr-border);
+  border-radius: 50%;
+}
+
+/*==============================
+timeline section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+}
+/*==============================
+timeline section: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .experience-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .timeline {
+    width: 100%;
   }
 }
