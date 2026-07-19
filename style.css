@@ -37,6 +37,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--clr-bg);
   color: var(--clr-text);
+  min-width: 276px;
 }
 
 img {
@@ -369,10 +370,19 @@ hero section: desktop
     margin: 1rem;
   }
 
+  .about-container {
+    width: fit-content;
+  }
+
   .about p {
     display: inline-flex;
     margin-right: 24px;
+    margin-bottom: none;
     text-indent: 16px;
+  }
+
+  .about p:last-child {
+    margin-right: 0;
   }
 }
 
@@ -458,5 +468,146 @@ skills section: desktop
 
   .skills .section-title {
     text-align: left;
+  }
+}
+
+/*==============================
+project section: general
+==============================*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  grid-column: span 6;
+}
+
+.project-card .project-img {
+  aspect-ratio: 3/2;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.project-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+  transition: max-height 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.project-card:focus .project-description,
+.project-card:hover .project-description {
+  -webkit-line-clamp: unset;
+  max-height: 500px;
+}
+
+.project-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.project-tags span {
+  background-color: var(--clr-surface-light);
+  padding: 0.3rem 0.5rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: 12px;
+}
+
+.project-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.project-link-btn {
+  flex-grow: 1;
+}
+
+/*==============================
+hero section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+  .project-card {
+    grid-column: span 3;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    text-align: left;
+    width: auto;
+  }
+
+  .project-description {
+    width: auto;
+    text-align: left;
+  }
+
+  .project-tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    width: auto;
+  }
+}
+/*==============================
+hero section: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .section-title {
+    width: 100%;
+    text-align: left;
+  }
+
+  .project-card {
+    grid-column: span 2;
+  }
+
+  .project-buttons {
+    width: auto;
+    display: block;
   }
 }
