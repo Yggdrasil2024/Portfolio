@@ -114,7 +114,8 @@ section {
 .topbar {
   width: 100%;
   padding: 1.2rem 1.5rem;
-  background-color: var(--clr-bg);
+  background-color: /*var(--clr-bg)*/ rgb(15, 23, 42, 0.7);
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--clr-border);
   position: sticky;
   top: 0;
@@ -488,6 +489,7 @@ project section: general
 
 .project-card {
   grid-column: span 6;
+  height: fit-content;
 }
 
 .project-card .project-img {
@@ -559,7 +561,7 @@ project section: general
 }
 
 /*==============================
-hero section: tablet
+projects section: tablet
 ==============================*/
 @media screen and (min-width: 768px) {
   .project-card {
@@ -629,6 +631,13 @@ timeline section: general
 .experience .timeline-item {
   margin-bottom: 12px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience .timeline-item span {
+  font-style: italic;
 }
 
 .experience .timeline-item:before {
