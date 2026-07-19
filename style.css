@@ -753,3 +753,50 @@ contact section: desktop
   }
 }
 
+/*==============================
+footer: general
+==============================*/
+.footer-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-container .section-title {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.footer-container .footer-socials {
+  margin-bottom: 16px;
+}
+
+.footer-socials a:hover {
+  color: var(--clr-primary-hover);
+}
+
+.footer-newsletter p {
+  margin-bottom: 16px;
+}
+
+.copyright {
+  margin-top: 16px;
+  color: var(--clr-text-light);
+  font-size: 0.8rem;
+}
+
+/*==============================
+footer: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+  }
+
+  .copyright {
+    grid-column: span 2;
+  }
+}
