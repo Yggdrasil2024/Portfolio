@@ -663,3 +663,93 @@ timeline section: desktop
     width: 100%;
   }
 }
+
+/*==============================
+contact section: general
+==============================*/
+.contact {
+  background-color: var(--clr-surface-light);
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.contact-form {
+  background-color: var(--clr-surface);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 1.1rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  background-color: var(--clr-surface-light);
+  border-radius: 12px;
+  color: var(--clr-text-light);
+  outline: none;
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--clr-border);
+}
+
+.submit-btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+/*==============================
+contact section: tablet
+==============================*/
+@media screen and (min-width: 768px) {
+  .contact-form textarea {
+    height: 250px;
+  }
+}
+/*==============================
+contact section: desktop
+==============================*/
+@media screen and (min-width: 1024px) {
+  .contact .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  .contact .section-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact .contact-form .form-group:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .contact .contact-form .submit-btn {
+    grid-column: span 2;
+  }
+}
+
